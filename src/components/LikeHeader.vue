@@ -1,7 +1,6 @@
 <template>
   <div>
-    <slot name="title" :fafa="user" text="マツダくん大好き"></slot>
-    <slot name="num"></slot>
+    <slot :fafa="user" text="マツダくん大好き"></slot>
   </div>
 </template>
 
