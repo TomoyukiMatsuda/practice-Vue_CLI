@@ -1,12 +1,18 @@
 <template>
   <div>
-    <label for="title"></label>
+    <label for="title">タイトル</label>
     <input
       id="title"
       type="text"
-      :value="eventData.title"
-      @input="eventData.title = $event.target.value"
+      :value="value"
+      @input="$emit('input', $event.target.value)"
     >
     <pre>{{ eventData.title }}</pre>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["value"],
+};
+</script>
