@@ -7,7 +7,7 @@
       :value="value"
       @input="$emit('input', $event.target.value)"
     >
-    <pre>{{ eventData.title }}</pre>
+    <pre>{{ value }}</pre>
   </div>
 </template>
 

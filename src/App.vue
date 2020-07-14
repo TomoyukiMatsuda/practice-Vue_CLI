@@ -90,11 +90,12 @@
 import LikeHeader from "./components/LikeHeader.vue"; // コンポーネントのローカル登録
 import Home from "./components/Home.vue";
 import About from "./components/About.vue";
-import EventTitle from "./components/EventTitle";
+import EventTitle from "./components/EventTitle.vue";
 
 export default {
   data() {
     return {
+      score: 5,
       number: 10,
       currentComponent: "Home",
       locations: ["東京", "大阪", "名古屋"],
