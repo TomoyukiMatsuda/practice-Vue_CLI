@@ -1,9 +1,25 @@
 <template>
-  <p v-border:solid.round.shadow="{ width: '3px', color: 'red' }">Homeだよ</p>
+  <div>
+    <p v-border:solid.round.shadow="{ width: '3px', color: 'red' }">Homeだよ</p>
+    <h2>{{ title | upCase }}</h2>
+    <p>{{ subTitle | lowCase }}</p>
+  </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      tmpData: "hello",
+      title: "Welcome to Tokyo",
+      subTitle: "Tokyo is a great city"
+    }
+  },
+  filters: {
+    lowCase(val) {
+      return val.toLowerCase();
+    }
+  },
   directives: {
     border(el, binding) {
       el.style.borderWidth = binding.value.width;
