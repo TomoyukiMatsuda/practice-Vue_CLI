@@ -7,6 +7,11 @@ Vue.component("LikeNumber", LikeNumber); // コンポーネントのグローバ
 Vue.filter("upCase", function(val) {
   return val.toUpperCase();
 });
+Vue.mixin({
+  created() {
+    console.log("グローバルミックスいん");
+  }
+});
 
 new Vue({
   render: h => h(App),
