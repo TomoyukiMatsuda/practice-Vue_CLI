@@ -1,23 +1,43 @@
 <template>
   <div class="main">
+    <Childe props-text="プロップステキスト">
+      <template v-slot:text>
+        <p>スロットだよ</p>
+      </template>
+      <template v-slot:data>
+        <p>{{ data }}</p>
+      </template>
+    </Childe>
+    <button @click="myAnimation = 'slide'">スライド</button>
+    <button @click="myAnimation = 'fade'">フェイド</button>
+    <p>{{ myAnimation }}</p>
     <button @click="show = !show">切り替え</button>
-    <transition name="fade" appear>
+    <transition
+     enter-active-class="animate__animated animate__bounce"
+     leave-active-class="animate__animated animate__shakeX"
+     appear
+    >
       <p v-if="show">ハロー</p>
     </transition>
-    <transition name="slide" type="animation" appear>
-      <div v-if="show">
-        <p>バーい</p>
-      </div>
+    <transition :name="myAnimation" appear>
+        <p v-show="show">バーい</p>
     </transition>
   </div>
 </template>
 
 <script>
+import Childe from "./components/Childe.vue";
+
 export default {
   data() {
     return {
       show: true,
+      myAnimation: 'slide',
+      data: "データ",
     }
+  },
+  components: {
+    Childe,
   }
 }
 </script>
