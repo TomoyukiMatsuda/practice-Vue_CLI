@@ -13,6 +13,13 @@
     <p>{{ myAnimation }}</p>
     <button @click="show = !show">切り替え</button>
     <transition
+      name="fade"
+      mode="out-in"
+    >
+      <p v-if="show" key="hello">こんちは</p>
+      <p v-else key="bye">さよなら</p>
+    </transition>
+    <transition
      enter-active-class="animate__animated animate__bounce"
      leave-active-class="animate__animated animate__shakeX"
      appear
