@@ -15,12 +15,12 @@
     <br>
     <button @click="add">追加</button>
     <ul style="width: 200px; margin: auto;">
-      <transition-group>
+      <transition-group name="fade"> <!-- transition-groupはデフォルトではspanタグ tag="div"など指定することで変更可能 -->
         <li
-          style="cusor: pointer;"
+          style="cursor: pointer;"
           v-for="(number, index) in numbers"
           @click="remove(index)"
-          key="number"
+          :key="number"
           >{{ number }}
         </li>
       </transition-group>
@@ -133,11 +133,14 @@ export default {
   background-color: deeppink;
 }
 
+.fade-move {
+  transition: transform 1s;
+}
 .fade-enter {
   opacity: 0;
 }
 .fade-enter-active {
-  transition: opacity .8s;
+  transition: opacity 1s;
 }
 .fade-enter-to {
   opacity: 1;
@@ -146,7 +149,9 @@ export default {
   opacity: 1;
 }
 .fade-leave-active {
-  transition: opacity .8s;
+  transition: opacity 1s;
+  position: absolute;
+  width: 200px;
 }
 .fade-leave-to {
   opacity: 0;
