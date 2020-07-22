@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h3>User</h3>
+    <p>タブ２だよ</p>
   </div>
 </template>
