@@ -40,11 +40,8 @@ export default {
 </script>
 
 <style scoped>
-body {
-  color: #3f4548;
-}
 
-/* ulのデフォルトスタイルを消去 */
+/* ulのデフォルトスタイルを消去する */
 .tabs-menu {
   margin: 0;
   padding: 0;
@@ -64,9 +61,7 @@ body {
   border-radius: 4px 4px 0 0;
   color: #557f95;
   text-decoration: none;
-
-  /* 各プロパティをふわっと変える演出 */
-  /* transition: all 0.8s; */
+  transition: all .2s;
 }
 
 /* タブにマウスを乗せたらカーソルの形を変える */
@@ -87,7 +82,6 @@ body {
   color: black;
 }
 
-/* タブコンテンツ表示エリア */
 .tabs-content {
   clear: both;
   background-color: #f0fbff;
