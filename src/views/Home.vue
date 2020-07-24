@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>Home</h3>
-    <butt on @click="toUsers">Usersのページに遷移する</butt>
+    <button @click="toUsers">Usersのページに遷移する</button>
   </div>
 </template>
 
@@ -9,7 +9,10 @@
 export default {
   methods: {
     toUsers() {
-      this.$router.push({ path: "users" });
+      this.$router.push({
+        name: "users-id-profile",
+        params: { id: 1 }
+      });
     }
   }
 };
