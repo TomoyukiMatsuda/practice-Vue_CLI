@@ -39,5 +39,19 @@ export default new Router({
       path: '*',
      redirect: '/'
     }
-  ]
+  ],
+  scrollBehavior(to, from, savadePosition) {
+    console.log(to);
+    console.log(from);
+    console.log(savadePosition);
+
+    if (savadePosition) {
+      return savadePosition;
+    }
+    if (to.hash) {
+      return {
+        selector: to.hash
+      };
+    }
+  }
 });
